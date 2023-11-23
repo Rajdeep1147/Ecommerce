@@ -129,4 +129,12 @@ class StudentController extends Controller
         
         return response()->json(['success' => true, 'message' => 'Item deleted', 'deletedItemId' => $id]);
     }
+
+    public function download()
+    {
+       $file =  public_path('images/logo_sm_dark.png');
+       $header = [('content-Type:application/png')];
+       $newName = 'today.png'.time().'png';
+       return response()->download($file,$newName,$header);
+    }
 }

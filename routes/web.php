@@ -59,4 +59,6 @@ Route::put('student/update/{id}',[StudentController::class,'update'])->name('stu
 
 Route::delete('student/delete/{id}',[StudentController::class,'destroy'])->name('student.delete');
 
+Route::get('/download', [StudentController::class,'download'])->name('student.download');
+
 
