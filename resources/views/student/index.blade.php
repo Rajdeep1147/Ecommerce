@@ -24,7 +24,7 @@
     </thead>
     <tbody>
           @foreach ($students as $student)
-      <tr>
+        <tr class="data-user-id-{{$student->id}}">
         <td>{{$student->id}}</td>
         <td>{{$student->name}}</td>
         <td>{{$student->email}}</td>
@@ -50,7 +50,6 @@
     jQuery(document).ready(function ($) {
         $(".delete-user").click(function (e) {
             e.preventDefault();
-
             var studentId = $(this).data('user-id');
 
             $.ajax({
@@ -62,6 +61,7 @@
 
                 success: function (data) {
                     console.log(data.message);
+                     $(".data-user-id-"+studentId).remove();
                     // Optionally, update the UI to remove the deleted student
                 },
                 error: function (error) {
