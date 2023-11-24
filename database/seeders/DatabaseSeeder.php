@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Post;
 use Illuminate\Database\Seeder;
+use Modules\Comment\app\Models\Comment;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,8 +21,9 @@ class DatabaseSeeder extends Seeder
             DefaultData::class,
             UserSeeder::class,
             CustomerSeeder::class,
+            ProductSeeder::class
         ]);
-        // \App\Models\User::factory(10)->create();
+        // Comment::factory(10)->create();
    
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

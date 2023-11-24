@@ -1,0 +1,8 @@
+{
+    "Blog": true,
+    "User": true,
+    "Auth": true,
+    "PRoduct": true,
+    "Product": true,
+    "Comment": true
+}
