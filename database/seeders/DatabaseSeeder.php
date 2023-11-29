@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             DefaultData::class,
             UserSeeder::class,
             CustomerSeeder::class,
-            ProductSeeder::class
+            ProductSeeder::class,
+            CommentSeeder::class
         ]);
         // Comment::factory(10)->create();
    
