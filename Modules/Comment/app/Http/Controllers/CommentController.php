@@ -6,15 +6,22 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Comment\app\Repository\Interfaces\CommentRepositoryInterface;
 
 class CommentController extends Controller
 {
+    public function __construct(
+        private CommentRepositoryInterface $commentRepo
+    )
+    {
+        
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('comment::index');
+        return $this->commentRepo->index();
     }
 
     /**

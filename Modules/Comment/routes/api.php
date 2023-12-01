@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Modules\Comment\app\Http\Controllers\CommentController;
 
 /*
     |--------------------------------------------------------------------------
@@ -15,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth:sanctum'])->prefix('v1')->name('api.')->group(function () {
-    Route::get('comment', fn (Request $request) => $request->user())->name('comment');
+    // Route::get('comment', fn (Request $request) => $request->user())->name('comment');
+    Route::get('comment',[CommentController::class,'index'])->name('comment.index');
 });

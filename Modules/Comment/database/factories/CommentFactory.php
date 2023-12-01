@@ -2,7 +2,9 @@
 
 namespace Modules\Comment\database\factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Product\app\Models\Product;
 
 class CommentFactory extends Factory
 {
@@ -17,8 +19,8 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'Product_id'=> 1,
-            'user_id'=> 1,
+            'Product_id'=> Product::all()->random()->id,
+            'user_id'=> User::all()->random()->id,
             'body' => $this->faker->text(),
             'is_active' =>$this->faker->boolean,
 
