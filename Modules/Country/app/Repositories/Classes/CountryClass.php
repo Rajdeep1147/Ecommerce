@@ -12,6 +12,7 @@ class CountryClass extends BaseRepository implements CountryInterface
         $this->model = $model;
     }
 
+    
     public function index(array $relation =[])
     {
         $country =  Country::whereHas('posts',function($query){
