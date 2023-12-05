@@ -4,5 +4,10 @@
     "Auth": true,
     "PRoduct": true,
     "Product": true,
-    "Comment": true
+    "Comment": true,
+    "Customer": true,
+    "Model": true,
+    "Country": true,
+    "Post": true,
+    "Employee": true
 }

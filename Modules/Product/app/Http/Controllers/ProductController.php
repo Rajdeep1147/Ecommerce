@@ -6,15 +6,28 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Comment\app\Repository\Interfaces\CommentRepositoryInterface;
+use Modules\Product\Repositories\Interfaces\ProductRepositoryInterface;
+
+// use Modules/Product/app/Repositories/Interfaces;
 
 class ProductController extends Controller
 {
+
+    public function __construct(
+        private ProductRepositoryInterface $productRepo,
+        private CommentRepositoryInterface $commentRepo
+    )
+    {
+    }
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('product::index');
+       return  $this->productRepo->index();
+        // return view('users.index', compact('users'));
     }
 
     /**
