@@ -16,13 +16,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            PostSeeder::class,
+            
             AdminSeeder::class,
             DefaultData::class,
-            UserSeeder::class,
             CustomerSeeder::class,
             ProductSeeder::class,
-            CommentSeeder::class
+            CountrySeeder::class,
+            UserSeeder::class,
+            CommentSeeder::class,
+            
+            PostSeeder::class,
         ]);
         // Comment::factory(10)->create();
    

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Modules\Country\app\Models\Country;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -22,6 +23,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'status' => fake()->randomElement(['active', 'deactive']),
             'phone' => fake()->phoneNumber,
+            'country_id'=> Country::all()->random()->id,
             'email_verified_at' => now(),
             'password' => bcrypt('123456'), // password
             'remember_token' => Str::random(10),

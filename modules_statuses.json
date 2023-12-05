@@ -6,5 +6,8 @@
     "Product": true,
     "Comment": true,
     "Customer": true,
-    "Model": true
+    "Model": true,
+    "Country": true,
+    "Post": true,
+    "Employee": true
 }
